@@ -1,15 +1,13 @@
-import java.util.Map;
-
 public class Data {
-    Map<String, String> attributes;
+    String[] attributes;
     String label;
 
-    Data(Map<String, String> attributes, String label) {
+    Data(String[] attributes, String label) {
         this.attributes = attributes;
         this.label = label;
     }
 
-    public Map<String, String> getAttributes() {
+    public String[] getAttributes() {
         return attributes;
     }
 
