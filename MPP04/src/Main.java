@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -25,10 +24,8 @@ public class Main {
             String formattedAttributes = Stream.of(data.getAttributes())
                     .map(String::trim)
                     .collect(Collectors.joining(", ", "(", ")"));
-            System.out.println("Atrybuty: " + formattedAttributes);
-            result.getProbabilities().forEach((label, prob) -> {
-                System.out.println("\tP(" + label + "|X) = " + prob);
-            });
+            System.out.println("Atrybuty: X = " + formattedAttributes);
+            result.getProbabilities().forEach((label, prob) -> System.out.println("\tP(" + label + "|X) = " + prob));
             System.out.println("\tPrzewidywana etykieta: " + result.getBestLabel());
         }
 
@@ -41,10 +38,8 @@ public class Main {
             ClassificationResult result = classifier.classify(attributes);
             String formattedAttributes = Stream.of(attributes)
                     .collect(Collectors.joining(", ", "(", ")"));
-            System.out.println("Atrybuty: " + formattedAttributes);
-            result.getProbabilities().forEach((label, prob) -> {
-                System.out.println("\tP(" + label + "|X) = " + prob);
-            });
+            System.out.println("Atrybuty: X = " + formattedAttributes);
+            result.getProbabilities().forEach((label, prob) -> System.out.println("\tP(" + label + "|X) = " + prob));
             System.out.println("\tPrzewidywana etykieta: " + result.getBestLabel());
         }
         scanner.close();

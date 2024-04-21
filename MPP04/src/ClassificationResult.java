@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ClassificationResult {
-    private Map<String, Double> probabilities;
+    private final Map<String, Double> probabilities;
     private String bestLabel;
 
     public ClassificationResult() {
